@@ -25,7 +25,7 @@ This documentation contains a set of guidelines to help you during the contribut
 ```
 git clone --depth 1 https://github.com/<your_user_name>/arturdev.git
 ```
-![Preview](./readme-assets/clone.png)
+![Preview](./readme-assets/git-clone.png)
 
 **3.** Navigate to the project directory 📁.
 ```
@@ -35,14 +35,20 @@ cd arturdev
 ```
 git remote add upstream https://github.com/PrisonBreak8/arturdev.git
 ```
+![Preview](./readme-assets/git-remote.png)
+
 **5.** Check the remotes for this repository.
 ```
 git remote -v
 ```
+![Preview](./readme-assets/git-remote-v.png)
+
 **6.** Always take a pull from the upstream repository to your master branch to keep it at par with the my-portfolio project(updated repository).
 ```
 git pull upstream main
 ```
+![Preview](./readme-assets/git-pull-upstream.png)
+
 - Comment on any existing [issue(s)](https://github.com/PrisonBreak8/arturdev/issues) raised by **project maintainers**. Otherwise raise a [new issue](https://github.com/PrisonBreak8/arturdev/issues/new).
 
 > ### Guidelines for raising a new issue:
@@ -63,6 +69,8 @@ git pull upstream main
 ```
 git checkout -b <your_branch_name>
 ```
+![Preview](./readme-assets/checkout-b.png)
+
 **2.** Perfom your desired changes to the code base.
 
 - Ensure that your changes apply to all screensizes
@@ -86,23 +94,26 @@ git add .
 ```
 git commit -m "Relevant message"  (usually title of the pull request)
 ```
+![Preview](./readme-assets/example-commit.png)
+
 - **Make sure to condense your changes into a single commit**.
 
 **5.** Push the committed changes in your feature branch to your remote repo.
 ```
 git push -u origin <your_branch_name>
 ```
+![Preview](./readme-assets/git-push-u.png)
 
 **6.** To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
 
-<!--<img src="./readme-assets/ComparePR.png" width=600>-->
+![Preview](./readme-assets/compare&pull.png)
 
 **7.** Then add an appropriate title and description to your pull request that explains your changes and efforts done.
 
 
 **8.** Click on `Create Pull Request`.
 
-<!--<img src="./readme-assets/CreatePR.png" width=600>-->
+![Preview](./readme-assets/create-pull-request.png)
 
 > ### Guidelines for raising a pull request:
 >
