@@ -24,7 +24,7 @@
 
 ## Developers
 
-- **Artur Goludev** - [https://github.com/PrisonBreak8](https://github.com/PrisonBreak8)
+- [**Artur Goludev** ](https://github.com/PrisonBreak8)
 
 ## Preview
 
@@ -36,4 +36,4 @@
 - [Linkedin](https://www.linkedin.com/in/artur-golubev/)
 
 #### My Codepen
-- See my works and join me [my codepen](https://codepen.io/your-work)
+- See my works and join me [my Codepen](https://codepen.io/your-work)
