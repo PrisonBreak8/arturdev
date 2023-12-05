@@ -21,6 +21,8 @@ This documentation contains a set of guidelines to help you during the contribut
 
 ![Preview](./readme-assets/fork.png)
 
+![Preview](./readme-assets/create-fork.png)
+
 **2.**  Clone your forked copy of the project. [this](https://github.com/PrisonBreak8/arturdev) repository.
 ```
 git clone --depth 1 https://github.com/<your_user_name>/arturdev.git
