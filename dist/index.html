@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+	<title>Artur-Dev</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="About: Author: A.A. Golubevs">
+	<meta name="format-detection" content="telephone=no">
+	<script>
+		let localS = localStorage.getItem('theme');
+		let themeToSet = localS;
+		// If local storage is not set, we check the OS preference
+		if (!localS) {
+			themeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		//Set the correct theme
+		document.documentElement.setAttribute('data-theme', themeToSet)
+	</script>
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231210182220">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<header class="header">
+			<div class="header__container">
+
+				<button class="switcher" id="theme-switcher" type="button" title="Switch to dark theme">
+					<span class="switcher__shell switcher__shell--light">
+						<svg class="icon-sun">
+							<use xlink:href="img/icons/icons.svg#light-mode"></use>
+						</svg>
+					</span>
+					<span class="switcher__shell switcher__shell--dark">
+						<svg class="icon-moon">
+							<use xlink:href="img/icons/icons.svg#dark-mode"></use>
+						</svg>
+					</span>
+				</button>
+
+			</div>
+		</header>
+		<main class="page">
+
+		</main>
+		<footer class="footer">
+
+		</footer>
+
+	</div>
+
+	<script src="js/app.min.js?_v=20231210182220"></script>
+</body>
+
+</html>
