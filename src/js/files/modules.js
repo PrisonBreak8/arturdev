@@ -1,1 +1,1 @@
-export const flsModules = {}
+export const artModules = {}

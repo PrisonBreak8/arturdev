@@ -1,4 +1,58 @@
 //====================================================================================================
+.switcher {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 40px;
+	height: 22px;
+	flex-shrink: 0;
+	border-radius: 11px;
+	border: var(--switch-border);
+	background-color: var(--switch-bg);
+	cursor: pointer;
+	transition: border 0.2s;
+	@media (any-hover: hover) {
+		&:hover {
+			border: var(--switch-border-hover);
+		}
+	}
+	// .switcher__shell
+	&__shell {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		// .switcher__shell--light
+		&--light {
+			&::before {
+				content: "";
+				position: absolute;
+				height: 18px;
+				width: 18px;
+				border-radius: 50%;
+				z-index: 0;
+				background-color: var(--switch-circle-bg);
+			}
+		}
+		// .switcher__shell--dark
+		&--dark {
+		}
+	}
+}
+
+.icon-sun,
+.icon-moon {
+	height: 12px;
+	width: 12px;
+	z-index: 1;
+}
+.icon-sun {
+	fill: var(--icon-mode-fill);
+}
+.icon-moon {
+	fill: var(--icon-mode-fill);
+}
 
 //====================================================================================================
 

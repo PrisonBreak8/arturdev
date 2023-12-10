@@ -1,7 +1,26 @@
 :root {
+	--default-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, fill 0.2s ease-in-out,
+		transform 0.2s ease-in-out;
 }
 
-body {
-	&.dark-theme {
-	}
+:root[data-theme="light"] {
+	--page-bg: #fff;
+
+	--icon-mode-fill: #000;
+
+	--switch-bg: rgb(142 150 170 / 18%);
+	--switch-circle-bg: #fff;
+	--switch-border: 1px solid rgba(194, 194, 196, 1);
+	--switch-border-hover: 1px solid #646cff;
+}
+
+:root[data-theme="dark"] {
+	--page-bg: #1b1b1f;
+
+	--icon-mode-fill: #fff;
+
+	--switch-bg: rgb(142 150 170 / 22%);
+	--switch-circle-bg: transparent;
+	--switch-border: 1px solid rgba(194, 194, 196, 0.4);
+	--switch-border-hover: 1px solid rgba(100, 108, 255, 9);
 }
