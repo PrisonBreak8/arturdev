@@ -21,10 +21,10 @@ export const css = () => {
 				app.isBuild,
 				autoprefixer({
 					overrideBrowserslist: ["last 3 versions"],
-					cascade: false
+					cascade: false // закрыл чтобы не дописовало -webkit для гридов
 				})
 			)
-		) // закрыл чтобы не дописовало -webkit для гридов
+		)
 		.pipe(
 			app.plugins.if(
 				app.isWebP,

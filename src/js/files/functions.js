@@ -1,5 +1,5 @@
 // Подключение списка активных модулей
-import { flsModules } from "./modules.js";
+import { artModules } from "./modules.js";
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 export function isWebp() {
@@ -25,7 +25,7 @@ export function addTouchClass() {
 	// Додавання класу _touch для HTML, якщо браузер мобільний
 	if (isMobile.any()) document.documentElement.classList.add('touch');
 }
-// Додавання loaded для HTML після повного завантаження сторінки
+// Добавление loaded для HTML после полной загрузки страницы
 export function addLoadedClass() {
 	if (!document.documentElement.classList.contains('loading')) {
 		window.addEventListener("load", function () {
@@ -35,16 +35,16 @@ export function addLoadedClass() {
 		});
 	}
 }
-// Отримання хешу на адресі сайту
+// Получение хеша по адресу сайта
 export function getHash() {
 	if (location.hash) { return location.hash.replace('#', ''); }
 }
-// Вказівка хеша на адресу сайту
+// Указание хеша по адресу сайта
 export function setHash(hash) {
 	hash = hash ? `#${hash}` : window.location.href.split('#')[0];
 	history.pushState('', '', hash);
 }
-// Облік плаваючої панелі на мобільних пристроях при 100vh
+// Учет плавающей панели на мобильных устройствах при 100vh
 export function fullVHfix() {
 	const fullScreens = document.querySelectorAll('[data-fullscreen]');
 	if (fullScreens.length && isMobile.any()) {
@@ -178,7 +178,7 @@ export let bodyLock = (delay = 500) => {
 	}
 }
 
-// Модуль роботи з меню (бургер) =======================================================================================================================================================================================================================
+// Модуль работы по меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
 	if (document.querySelector(".icon-menu")) {
 		document.addEventListener("click", function (e) {
@@ -227,56 +227,23 @@ export function filterGallery() {
 	}
 }
 
-// Модуль "Сustom сursor" =======================================================================================================================================================================================================================
-export function customCursor(isShadowTrue) {
-	const wrapper = document.querySelector('[data-custom-cursor]') ? document.querySelector('[data-custom-cursor]') : document.documentElement;
-	if (wrapper && !isMobile.any()) {
-		// Створюємо та додаємо об'єкт курсору
-		const cursor = document.createElement('div');
-		cursor.classList.add('fls-cursor');
-		cursor.style.opacity = 0;
-		cursor.insertAdjacentHTML('beforeend', `<span class="fls-cursor__pointer"></span>`);
-		isShadowTrue ? cursor.insertAdjacentHTML('beforeend', `<span class="fls-cursor__shadow"></span>`) : null;
-		wrapper.append(cursor);
-
-		const cursorPointer = document.querySelector('.fls-cursor__pointer');
-		const cursorPointerStyle = {
-			width: cursorPointer.offsetWidth,
-			height: cursorPointer.offsetHeight
-		}
-		let cursorShadow, cursorShadowStyle;
-		if (isShadowTrue) {
-			cursorShadow = document.querySelector('.fls-cursor__shadow');
-			cursorShadowStyle = {
-				width: cursorShadow.offsetWidth,
-				height: cursorShadow.offsetHeight
-			}
-		}
-		function mouseActions(e) {
-			if (e.type === 'mouseout') {
-				cursor.style.opacity = 0;
-			} else if (e.type === 'mousemove') {
-				cursor.style.removeProperty('opacity');
-				if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input') || (window.getComputedStyle(e.target).cursor !== 'none' && window.getComputedStyle(e.target).cursor !== 'default')) {
-					cursor.classList.add('_hover');
-				} else {
-					cursor.classList.remove('_hover');
-				}
-			} else if (e.type === 'mousedown') {
-				cursor.classList.add('_active');
-
-			} else if (e.type === 'mouseup') {
-				cursor.classList.remove('_active');
-			}
-			cursorPointer ? cursorPointer.style.transform = `translate3d(${e.clientX - cursorPointerStyle.width / 2}px, ${e.clientY - cursorPointerStyle.height / 2}px, 0)` : null;
-			cursorShadow ? cursorShadow.style.transform = `translate3d(${e.clientX - cursorShadowStyle.width / 2}px, ${e.clientY - cursorShadowStyle.height / 2}px, 0)` : null;
-		}
-
-		window.addEventListener('mouseup', mouseActions);
-		window.addEventListener('mousedown', mouseActions);
-		window.addEventListener('mousemove', mouseActions);
-		window.addEventListener('mouseout', mouseActions);
+// Модуль Темная и Светлая тема
+export function modeInit() {
+	//============ DARK LIGHT THEME ============================================================================================================================================
+	// Switch function
+	const switchTheme = () => {
+		// Get root element and data-theme value
+		const rootElem = document.documentElement;
+		let dataTheme = rootElem.getAttribute('data-theme');
+		let newTheme = rootElem.getAttribute('data-theme');
+		newTheme = (dataTheme === 'light') ? 'dark' : 'light';
+		// Set the new HTML attribute
+		rootElem.setAttribute('data-theme', newTheme);
+		// Set the new local storage item 
+		localStorage.setItem('theme', newTheme);
 	}
+	//Add event listener for the theme switcher
+	document.querySelector('#theme-switcher').addEventListener('click', switchTheme);
 }
 
 // Модуль "показать еще" =======================================================================================================================================================================================================================
@@ -361,7 +328,7 @@ export function indexInParent(parent, element) {
 	const array = Array.prototype.slice.call(parent.children);
 	return Array.prototype.indexOf.call(array, element);
 };
-// Функція перевіряє чи об'єкт видимий
+// Функция проверяет, видим ли объект видимый
 export function isHidden(el) {
 	return (el.offsetParent === null)
 }

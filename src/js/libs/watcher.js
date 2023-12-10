@@ -1,6 +1,6 @@
 // Подключение функционала
 import { isMobile, uniqArray, ART } from "../files/functions.js";
-import { flsModules } from "../files/modules.js";
+import { artModules } from "../files/modules.js";
 
 // Наблюдатель объектов [всевидящий глаз]
 // data-watch - можно писать значение для применения кастомного кода
@@ -163,4 +163,4 @@ class ScrollWatcher {
 	}
 }
 // Запускаем и добавляем в объект модулей
-flsModules.watcher = new ScrollWatcher({});
+artModules.watcher = new ScrollWatcher({});

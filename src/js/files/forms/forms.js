@@ -1,6 +1,6 @@
 // Подключение функционала
 // Подключение списка активных модулей
-import { flsModules } from "../modules.js";
+import { artModules } from "../modules.js";
 // Вспомогательные функции
 import { isMobile, _slideUp, _slideDown, _slideToggle, ART } from "../functions.js";
 // Модуль прокрутки к блоку
@@ -135,12 +135,12 @@ export let formValidate = {
 					checkbox.checked = false;
 				}
 			}
-			if (flsModules.select) {
+			if (artModules.select) {
 				let selects = form.querySelectorAll('.select');
 				if (selects.length) {
 					for (let index = 0; index < selects.length; index++) {
 						const select = selects[index].querySelector('select');
-						flsModules.select.selectBuild(select);
+						artModules.select.selectBuild(select);
 					}
 				}
 			}
@@ -211,9 +211,9 @@ export function formSubmit() {
 		// Попап показывает, если подключен модуль попапов
 		// и для формы указана настройка
 		setTimeout(() => {
-			if (flsModules.popup) {
+			if (artModules.popup) {
 				const popup = form.dataset.popupMessage;
-				popup ? flsModules.popup.open(popup) : null;
+				popup ? artModules.popup.open(popup) : null;
 			}
 		}, 0);
 		// Очищаем форму

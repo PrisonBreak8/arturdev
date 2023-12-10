@@ -3,6 +3,17 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="About: Author: A.A. Golubevs">
 	<meta name="format-detection" content="telephone=no">
+	<script>
+		let localS = localStorage.getItem('theme');
+		let themeToSet = localS;
+		// If local storage is not set, we check the OS preference
+		if (!localS) {
+			themeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		//Set the correct theme
+		document.documentElement.setAttribute('data-theme', themeToSet)
+	</script>
 	<!-- <style>body{opacity: 0;}</style> -->
 	<link rel="stylesheet" href="css/style.min.css">
 	<link rel="shortcut icon" href="favicon.ico">
