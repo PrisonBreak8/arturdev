@@ -1,13 +1,39 @@
 :root {
-	--default-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, fill 0.2s ease-in-out,
-		transform 0.2s ease-in-out;
+	/* font families */
+	--ff-base: "Inter", sans-serif;
+	// --ff-accent: "Young Serif", serif;
+
+	/* font weights */
+	--fw-regular: 400;
+	--fw-semi-bold: 600;
+	--fw-bold: 700;
+	--fw-extra-bold: 800;
+
+	/* font sizes */
+
+	--default-transition: color 0.2s, background-color 0.2s, fill 0.2s ease-in-out;
 }
 
 :root[data-theme="light"] {
+	/* background page */
 	--page-bg: #fff;
 
+	/* colors */
+	--clr-text: #000;
+	--clr-logo: #646cff;
+
+	/* header colors */
+	--header-color: #fff;
+	--header-color-fixed: #fff;
+	--header-box-shadow: 0 -20px 13px 20px hsla(0, 0%, 50.2%, 0.3);
+
+	/* icon colors */
 	--icon-mode-fill: #000;
 
+	/* hover efects */
+	--hvr-links: #646cff;
+
+	/* switch colors */
 	--switch-bg: rgb(142 150 170 / 18%);
 	--switch-circle-bg: #fff;
 	--switch-border: 1px solid rgba(194, 194, 196, 1);
@@ -15,10 +41,25 @@
 }
 
 :root[data-theme="dark"] {
-	--page-bg: #1b1b1f;
+	/* background page */
+	--page-bg: #22272e;
 
-	--icon-mode-fill: #fff;
+	/* colors */
+	--clr-text: #dcdcd4;
+	--clr-logo: #646cff;
 
+	/* header colors */
+	--header-color: rgba(28, 33, 40, 0.6);
+	--header-color-fixed: rgba(28, 33, 40, 0.8);
+	--header-box-shadow: 0 -20px 13px 20px hsla(0, 0%, 100%, 0.1);
+
+	/* icon colors */
+	--icon-mode-fill: #dcdcd4;
+
+	/* hover efects */
+	--hvr-links: #646cff;
+
+	/* switch colors */
 	--switch-bg: rgb(142 150 170 / 22%);
 	--switch-circle-bg: transparent;
 	--switch-border: 1px solid rgba(194, 194, 196, 0.4);

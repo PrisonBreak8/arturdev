@@ -1,4 +1,152 @@
 //====================================================================================================
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	min-width: rem(320);
+	padding: rem(10) 0;
+	background-color: var(--header-color);
+	z-index: 100;
+	&._header-scroll {
+		position: fixed;
+		top: -20%;
+		background-color: var(--header-color-fixed);
+		box-shadow: var(--header-box-shadow);
+	}
+	&._header-show {
+		transition: top 0.3s ease 0s;
+		top: 0;
+	}
+	// .header__container
+	&__container {
+	}
+	// .header__menu
+	&__menu {
+	}
+}
+.menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: rem(40);
+	min-height: rem(60);
+	@media (max-width: $mobile) {
+		min-height: rem(40);
+	}
+	// .menu__logo
+	&__logo {
+		font-weight: var(--fw-semi-bold);
+		font-size: rem(24);
+		z-index: 12;
+		span {
+			color: var(--clr-logo);
+		}
+	}
+	// .menu__items
+	&__items {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 50, 30, 0, 1170, 768.98);
+	}
+	// .menu__body
+	&__body {
+		@media (max-width: $mobile) {
+			position: fixed;
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: 120%;
+			padding: 125px 25px 25px 25px;
+			background-color: var(--page-bg); // беграунд всего бургер меню
+			transition: right 0.3s ease-in;
+			&::before {
+				content: ""; // Плашка под которой будет меню проезжать
+				position: fixed;
+				top: 0;
+				right: 120%;
+				width: 100%;
+				height: rem(60);
+				background-color: var(--header-color);
+				transition: right 0.3s ease-in;
+				z-index: 10;
+			}
+			.menu-open & {
+				right: 0;
+				&::before {
+					content: "";
+					right: 0;
+				}
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		@media (max-width: $mobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			row-gap: rem(30);
+		}
+
+		@media (min-width: $mobile) {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-wrap: wrap;
+			@include adaptiveValue("column-gap", 60, 25, 0, 1170, 767);
+			row-gap: rem(10);
+		}
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		position: relative;
+		font-weight: var(--fw-semi-bold);
+		@include adaptiveValue("font-size", 18, 16, 0, 1170, 991.98);
+		transition: color 0.2s ease-in;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 2.5px;
+			bottom: -2.5px;
+			left: 0;
+			border-bottom: 2.5px solid var(--hvr-links);
+			transition: width 0.2s ease-in-out;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--hvr-links);
+			}
+			&:hover::before {
+				width: 100%;
+			}
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(22);
+		}
+	}
+	// .menu__buttons
+	&__buttons {
+		display: flex;
+		align-items: center;
+		@media (max-width: $mobile) {
+			column-gap: rem(25);
+		}
+	}
+	// .menu__burger
+	&__burger {
+	}
+	// .menu__icon
+	&__icon {
+	}
+}
+
 .switcher {
 	position: relative;
 	display: inline-flex;
@@ -40,7 +188,6 @@
 		}
 	}
 }
-
 .icon-sun,
 .icon-moon {
 	height: 12px;
@@ -57,14 +204,14 @@
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: rem(30);
-		height: rem(18);
+		width: rem(22);
+		height: rem(14);
 		z-index: 5;
 		@media (any-hover: none) {
 			cursor: default;
@@ -78,7 +225,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: var(--clr-text);
 		}
 		&::before {
 			top: 0;
@@ -107,4 +254,3 @@
 		}
 	}
 }
-*/

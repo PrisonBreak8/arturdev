@@ -12,7 +12,7 @@
 */
 
 // Включить/выключить ART (в работе)
-window['ART'] = false;
+window['ART'] = true;
 
 // Подключение основного файла стилей
 import "../scss/style.scss";
@@ -31,7 +31,7 @@ artFunctions.addTouchClass();
 //artFunctions.addLoadedClass();
 
 /* Модуль для работы с меню (Бургер) */
-// artFunctions.menuInit();
+artFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
 //artFunctions.fullVHfix();
 
@@ -57,7 +57,7 @@ artFunctions.modeInit();
 // import './libs/watcher.js'
 
 // Функции работы скролом
-// import * as artScroll from "./files/scroll/scroll.js";
+import * as artScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
 // Документация:
@@ -65,7 +65,7 @@ artFunctions.modeInit();
 
 // Функционал добавления классов к хедеру во время прокрутки
 // Документация:
-//artScroll.headerScroll();
+artScroll.headerScroll();
 
 
 // ========================================================================================================================================================================================================================================================
