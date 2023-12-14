@@ -59,7 +59,7 @@ $responsiveType: 1;
 body {
 	background-color: var(--page-bg);
 	font-weight: var(--fw-regular);
-	color: var(--clr-text);
+	color: var(--clr-main-text);
 	transition: var(--default-transition);
 	// Скролл заблокирован
 	.lock & {
