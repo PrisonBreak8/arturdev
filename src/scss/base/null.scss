@@ -23,7 +23,7 @@ body {
 }
 body {
 	line-height: 1.1;
-	font-family: $fontFamily;
+	font-family: var(--ff-base);
 	font-size: $fontSize;
 
 	//text-rendering: optimizeLegibility;
@@ -36,7 +36,7 @@ body {
 input,
 button,
 textarea {
-	font-family: $fontFamily;
+	font-family: var(--ff-base);
 	font-size: inherit;
 }
 button {

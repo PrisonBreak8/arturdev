@@ -1,18 +1,36 @@
-<header class="header">
+<header class="header" data-scroll="120" data-scroll-show>
 	<div class="header__container">
 
-		<button class="switcher" id="theme-switcher" type="button" title="Switch to dark theme">
-			<span class="switcher__shell switcher__shell--light">
-				<svg class="icon-sun">
-					<use xlink:href="@img/icons/icons.svg#light-mode"></use>
-				</svg>
-			</span>
-			<span class="switcher__shell switcher__shell--dark">
-				<svg class="icon-moon">
-					<use xlink:href="@img/icons/icons.svg#dark-mode"></use>
-				</svg>
-			</span>
-		</button>
+		<div class="header__menu menu">
+			<h1 class="menu__logo">Port<span>folio</span></h1>
+			<div class="menu__items">
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item"><a data-goto-header data-goto=".about-me" href="#" class="menu__link">About me</a></li>
+						<li class="menu__item"><a data-goto-header data-goto=".skills" href="#" class="menu__link">Skills</a></li>
+						<li class="menu__item"><a data-goto-header data-goto=".portfolio" href="#" class="menu__link">Portfolio</a></li>
+						<li class="menu__item"><a data-goto-header data-goto=".contacts" href="#" class="menu__link">Contacts</a></li>
+					</ul>
+				</nav>
+				<div class="menu__buttons">
+					<button class="switcher" id="theme-switcher" type="button" title="Switch to dark theme">
+						<span class="switcher__shell switcher__shell--light">
+							<svg class="icon-sun">
+								<use xlink:href="@img/icons/icons.svg#light-mode"></use>
+							</svg>
+						</span>
+						<span class="switcher__shell switcher__shell--dark">
+							<svg class="icon-moon">
+								<use xlink:href="@img/icons/icons.svg#dark-mode"></use>
+							</svg>
+						</span>
+					</button>
+					<div class="menu__burger">
+						<button class="menu__icon icon-menu" aria-label="menu button" type="button"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 </header>
