@@ -12,6 +12,9 @@
 	// .hero__img
 	&__img {
 	}
+	// .hero__social
+	&__social {
+	}
 }
 .change-text {
 	// .change-text__item
@@ -66,8 +69,11 @@
 	// .change-text__description
 	&__description {
 		font-size: 18px;
-		@include adaptiveValue("font-size", 18, 16);
+		@include adaptiveValue("font-size", 18, 15);
 		line-height: 1.4;
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
 	}
 }
 .img-hero {
@@ -75,3 +81,25 @@
 	&__image {
 	}
 }
+
+.social {
+	display: flex;
+	align-items: center;
+	column-gap: rem(20);
+	// .social__icon
+	&__icon {
+	}
+	// .social__github
+	&__github {
+		height: 40px;
+		width: 40px;
+		fill: var(--icon-clr-social);
+	}
+	// .social__linkedin
+	&__linkedin {
+		height: 40px;
+		width: 40px;
+		fill: var(--icon-clr-social);
+	}
+}
+//========================================================================================================================================================
