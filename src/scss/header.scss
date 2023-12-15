@@ -59,7 +59,7 @@
 			height: 100%;
 			top: 0;
 			right: 120%;
-			padding: 125px 25px 25px 25px;
+			padding: rem(125) rem(25) rem(25) rem(25);
 			background-color: var(--page-bg); // беграунд всего бургер меню
 			transition: right 0.3s ease-in;
 			&::before {
@@ -152,10 +152,10 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-around;
-	width: 40px;
-	height: 22px;
+	width: rem(40);
+	height: rem(20);
 	flex-shrink: 0;
-	border-radius: 11px;
+	border-radius: rem(11);
 	border: var(--switch-border);
 	background-color: var(--switch-bg);
 	cursor: pointer;
@@ -176,8 +176,8 @@
 			&::before {
 				content: "";
 				position: absolute;
-				height: 18px;
-				width: 18px;
+				height: rem(18);
+				width: rem(18);
 				border-radius: 50%;
 				z-index: 0;
 				background-color: var(--switch-circle-bg);
@@ -190,8 +190,8 @@
 }
 .icon-sun,
 .icon-moon {
-	height: 12px;
-	width: 12px;
+	height: rem(12);
+	width: rem(12);
 	z-index: 1;
 }
 .icon-sun {
@@ -225,7 +225,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: var(--clr-text);
+			background-color: var(--clr-main-text);
 		}
 		&::before {
 			top: 0;

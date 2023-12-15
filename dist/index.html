@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+	<title>Artur-Dev</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="About: Author: A.A. Golubevs">
+	<meta name="format-detection" content="telephone=no">
+	<script>
+		let localS = localStorage.getItem('theme');
+		let themeToSet = localS;
+		// If local storage is not set, we check the OS preference
+		if (!localS) {
+			themeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		//Set the correct theme
+		document.documentElement.setAttribute('data-theme', themeToSet)
+	</script>
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231215193052">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<header class="header" data-scroll="120" data-scroll-show>
+			<div class="header__container">
+
+				<div class="header__menu menu">
+					<h1 class="menu__logo">Port<span>folio</span></h1>
+					<div class="menu__items">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a data-goto-header data-goto=".about-me" href="#" class="menu__link">About me</a></li>
+								<li class="menu__item"><a data-goto-header data-goto=".skills" href="#" class="menu__link">Skills</a></li>
+								<li class="menu__item"><a data-goto-header data-goto=".portfolio" href="#" class="menu__link">Portfolio</a></li>
+								<li class="menu__item"><a data-goto-header data-goto=".contacts" href="#" class="menu__link">Contacts</a></li>
+							</ul>
+						</nav>
+						<div class="menu__buttons">
+							<button class="switcher" id="theme-switcher" type="button" title="Switch to dark theme">
+								<span class="switcher__shell switcher__shell--light">
+									<svg class="icon-sun">
+										<use xlink:href="img/icons/icons.svg#light-mode"></use>
+									</svg>
+								</span>
+								<span class="switcher__shell switcher__shell--dark">
+									<svg class="icon-moon">
+										<use xlink:href="img/icons/icons.svg#dark-mode"></use>
+									</svg>
+								</span>
+							</button>
+							<div class="menu__burger">
+								<button class="menu__icon icon-menu" aria-label="menu button" type="button"><span></span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</header>
+		<main class="page">
+
+			<section class="hero">
+				<div class="hero__container">
+
+					<div class="hero__content" data-fullscreen>
+						<div class="hero__change change-text">
+							<div class="change-text__item">
+								<h2 class="change-text__name">Hi! I'm Artur</h2>
+								<h3 class="change-text__title">And I'm</h3>
+								<h3 class="change-text__profession">
+									<span class="change-text__word">Frontend&nbsp;Developer.</span>
+									<span class="change-text__word">Frontend&nbsp;Developer.</span>
+								</h3>
+							</div>
+							<div class="change-text__description">
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt delectus explicabo sequi saepe odit cupiditate deleniti nihil, animi, dolores, eos culpa enim aliquid ipsa iusto facere
+									accusamus tempora ut vel!
+								</p>
+							</div>
+							<div class="hero__social social">
+								<a class="social__icon" href="https://github.com/PrisonBreak8" target="_blank">
+									<svg class="social__github">
+										<use xlink:href="img/icons/icons.svg#github"></use>
+									</svg>
+								</a>
+								<a class="social__icon" href="https://www.linkedin.com/in/artur-golubev/" target="_blank">
+									<svg class="social__linkedin">
+										<use xlink:href="img/icons/icons.svg#linkedin"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+						<!--<div class="hero__img img-hero">
+							<picture><source srcset="img" type="image/webp"><img class="img-hero__image" src="img" alt=""></picture>
+						</div>-->
+					</div>
+
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+
+		</footer>
+
+	</div>
+
+	<script src="js/app.min.js?_v=20231215193052"></script>
+</body>
+
+</html>

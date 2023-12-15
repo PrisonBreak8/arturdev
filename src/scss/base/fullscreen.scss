@@ -1,5 +1,16 @@
 [data-fullscreen] {
 	min-height: 100vh;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	column-gap: rem(20);
+	row-gap: rem(20);
+	@media (max-width: $tablet) {
+		//grid-template-columns: auto;
+		//align-items: start;
+		grid-template-columns: 1fr;
+	}
 	.touch & {
 		min-height: calc(var(--vh, 1vh) * 100);
 		@media (max-width: $mobile) {
