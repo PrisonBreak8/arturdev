@@ -7,7 +7,7 @@
 	}
 	// .hero__change
 	&__change {
-		padding-top: rem(100);
+		padding-top: rem(80);
 	}
 	// .hero__img
 	&__img {
@@ -26,7 +26,7 @@
 	}
 	// .change-text__name
 	&__name {
-		@include adaptiveValue("font-size", 38, 30, 0, 1170, 768.98);
+		@include adaptiveValue("font-size", 38, 28, 0, 1170, 768.98);
 		font-weight: var(--fw-bold);
 		&:not(:last-child) {
 			margin-bottom: rem(20);
@@ -68,8 +68,7 @@
 	}
 	// .change-text__description
 	&__description {
-		font-size: 18px;
-		@include adaptiveValue("font-size", 18, 15);
+		@include adaptiveValue("font-size", 18, 14);
 		line-height: 1.4;
 		&:not(:last-child) {
 			margin-bottom: rem(15);
@@ -85,6 +84,7 @@
 .social {
 	display: flex;
 	align-items: center;
+	width: 100%;
 	column-gap: rem(20);
 	// .social__icon
 	&__icon {
