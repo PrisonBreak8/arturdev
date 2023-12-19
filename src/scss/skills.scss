@@ -1,0 +1,45 @@
+.skills {
+	@include adaptiveValue("padding-top", 80, 40);
+	@include adaptiveValue("padding-bottom", 80, 40);
+	border-top: 1px solid var(--section-border);
+	// .skills__container
+	&__container {
+	}
+	// .skills__title
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(40);
+			@include adaptiveValue("margin-bottom", 40, 30, 0, 1170, 768.98);
+		}
+	}
+	// .skills__body-cards
+	&__body-cards {
+		display: grid;
+		column-gap: rem(30);
+		row-gap: rem(30);
+		grid-template-rows: repeat(6, 1fr);
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+		}
+		@media (min-width: $tablet) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+	}
+	// .skills__card
+	&__card {
+	}
+}
+
+.card {
+	// .card__heading
+	&__heading {
+	}
+	// .card__items
+	&__items {
+	}
+	// .card__item
+	&__item {
+	}
+}

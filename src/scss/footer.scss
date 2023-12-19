@@ -2,6 +2,7 @@
 .footer {
 	background-color: var(--footer-color);
 	padding: rem(15) 0 rem(15) 0;
+	border-top: 1px solid var(--section-border);
 	// .footer__container
 	&__container {
 		min-width: 100%;

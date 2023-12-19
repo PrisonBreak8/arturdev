@@ -1,17 +1,33 @@
 // Заголовки, общие БЭМ блоки и прочее...
+.title {
+	position: relative;
+	display: inline-block;
+	color: var(--clr-change-text);
+	// .title__label
+	&__label {
+		@include adaptiveValue("font-size", 30, 22, 0, 1170, 479.98);
+		font-weight: var(--fw-semi-bold);
+		text-transform: uppercase;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 30%;
+			height: 1px;
+			background-color: var(--clr-change-text);
+		}
+		&::before {
+			left: 0;
+			top: 0;
+		}
+		&::after {
+			right: 0;
+			bottom: 0;
+		}
+	}
+}
 
 //========================================================================================================================================================
 
 //========================================================================================================================================================
-//::-webkit-scrollbar {
-//	width: 0.6rem;
-//	border-radius: 0.5rem;
-//	background-color: hsl(19deg, 8%, 15%);
-//}
-//::-webkit-scrollbar-thumb {
-//	border-radius: 0.5rem;
-//	background-color: hsl(19deg, 8%, 25%);
-//}
-//::-webkit-scrollbar-thumb:hover {
-//	background-color: hsl(19deg, 8%, 35%);
-//}

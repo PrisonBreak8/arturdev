@@ -77,17 +77,9 @@ artScroll.headerScroll();
 /*
 Модуль "Filter Gallery"
  Документация:
- Сниппетт (HTML): filter
-	<ul class="filter">
-		<li class="filter__list">
-			<button class="filter__button active" data-filter="all" type="button">All</button>
-		</li>
-	</ul>
-	<div class="product">
-		<div class="product__box" data-item="all"></div>
-	</div>
+ Сниппетт (HTML):
 */
-// artFunctions.filterGallery();
+artFunctions.filterGallery();
 
 // Отправка формы на почту Библиотека
 // Документація: https://www.emailjs.com/
