@@ -18,7 +18,7 @@
 		document.documentElement.setAttribute('data-theme', themeToSet)
 	</script>
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231218123801">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231222114715">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,7 @@
 			<div class="header__container">
 
 				<div class="header__menu menu">
-					<h1 class="menu__logo">Port<span>folio</span></h1>
+					<h1 class="menu__logo">Artur<span>Dev</span></h1>
 					<div class="menu__items">
 						<nav class="menu__body">
 							<ul class="menu__list">
@@ -67,7 +67,6 @@
 
 			<section class="hero">
 				<div class="hero__container">
-
 					<div class="hero__content" data-fullscreen>
 						<div class="hero__change change-text">
 							<div class="change-text__item">
@@ -85,12 +84,12 @@
 								</p>
 							</div>
 							<div class="hero__social social">
-								<a class="social__icon" href="https://github.com/PrisonBreak8" target="_blank">
+								<a class="social__icon" aria-label="Git Hub" href="https://github.com/PrisonBreak8" target="_blank">
 									<svg class="social__github">
 										<use xlink:href="img/icons/icons.svg#github"></use>
 									</svg>
 								</a>
-								<a class="social__icon" href="https://www.linkedin.com/in/artur-golubev/" target="_blank">
+								<a class="social__icon" aria-label="Linkedin" href="https://www.linkedin.com/in/artur-golubev/" target="_blank">
 									<svg class="social__linkedin">
 										<use xlink:href="img/icons/icons.svg#linkedin"></use>
 									</svg>
@@ -100,6 +99,89 @@
 						<!--<div class="hero__img img-hero">
 							<picture><source srcset="img" type="image/webp"><img class="img-hero__image" src="img" alt=""></picture>
 						</div>-->
+					</div>
+				</div>
+			</section>
+
+			<section class="skills">
+				<div class="skills__container">
+
+					<div class="skills__title title">
+						<h3 class="title__label">skills</h3>
+					</div>
+
+					<div class="skills__body-cards">
+						<div class="skills__card card">
+							<p class="card__heading">JavaScript</p>
+							<ul class="card__items">
+								<li class="card__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto.</li>
+							</ul>
+						</div>
+
+						<div class="skills__card card">
+							<p class="card__heading">JavaScript</p>
+							<ul class="card__items">
+								<li class="card__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto.</li>
+							</ul>
+						</div>
+
+						<div class="skills__card card">
+							<p class="card__heading">JavaScript</p>
+							<ul class="card__items">
+								<li class="card__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto.</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="my-portfolio">
+				<div class="my-portfolio__container">
+
+					<div class="my-portfolio__title title">
+						<h3 class="title__label">portfolio</h3>
+					</div>
+
+					<div class="my-portfolio__filter filter">
+						<ul class="filter__item">
+							<li class="filter__list">
+								<button class="filter__button active" type="button" data-filter="all">all works
+									<span></span><span></span><span></span><span></span>
+								</button>
+							</li>
+							<li class="filter__list">
+								<button class="filter__button" type="button" data-filter="landind">landing
+									<span></span><span></span><span></span><span></span>
+								</button>
+							</li>
+							<li class="filter__list">
+								<button class="filter__button" type="button" data-filter="shops">shops
+									<span></span><span></span><span></span><span></span>
+								</button>
+							</li>
+						</ul>
+					</div>
+
+					<div class="my-portfolio__cards">
+
+						<div class="my-portfolio__card card" data-item="all">
+							<article class="card__article">
+								<picture><source srcset="img" type="image/webp"><img class="card__picture" src="img" alt=""></picture>
+								<div class="card__figcaption">
+
+								</div>
+							</article>
+						</div>
+
+						<div class="my-portfolio__card card" data-item="landind">
+
+						</div>
+
+						<div class="my-portfolio__card card" data-item="shops">
+
+						</div>
+
 					</div>
 
 				</div>
@@ -117,7 +199,7 @@
 
 	</div>
 
-	<script src="js/app.min.js?_v=20231218123801"></script>
+	<script src="js/app.min.js?_v=20231222114715"></script>
 </body>
 
 </html>

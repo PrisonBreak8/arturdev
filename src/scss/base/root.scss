@@ -1,3 +1,36 @@
+/* webkitscrollbar  */
+[data-theme="dark"] {
+	::-webkit-scrollbar {
+		width: rem(9);
+		border-radius: 0.5rem;
+		background-color: #1c2128cc;
+	}
+	::-webkit-scrollbar-thumb {
+		border-radius: 0.5rem;
+		background-color: rgba(165, 171, 255, 0.4);
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(165, 171, 255, 0.6);
+	}
+}
+
+[data-theme="light"] {
+	::-webkit-scrollbar {
+		width: rem(9);
+		border-radius: 0.5rem;
+		background-color: #fff;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 0.5rem;
+		background-color: rgba(78, 41, 209, 0.4);
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(78, 41, 209, 0.6);
+	}
+}
+//========================================================================================================================================================
 :root {
 	/* font families */
 	--ff-base: "Inter", sans-serif;
@@ -11,15 +44,15 @@
 	/* transition */
 	--default-transition: color 0.2s, background-color 0.2s, fill 0.2s ease-in-out;
 }
-
+//========================================================================================================================================================
 :root[data-theme="light"] {
 	/* background page */
 	--page-bg: #fff;
 
 	/* colors */
 	--clr-main-text: #3c3c43;
-	--clr-change-text: #646cff;
-	--clr-logo: #646cff;
+	--clr-change-text: #4e29d1;
+	--clr-logo: #4e29d1;
 
 	/* header colors */
 	--header-color: #fff;
@@ -33,25 +66,25 @@
 	--icon-clr-social: #3c3c43;
 
 	/* hover efects */
-	--hvr-links: #646cff;
-
-	/* webkit scrollbar color */
+	--hvr-links: #4e29d1;
 
 	/* switch colors */
 	--switch-bg: rgb(142 150 170 / 18%);
 	--switch-circle-bg: #fff;
 	--switch-border: 1px solid rgba(194, 194, 196, 1);
-	--switch-border-hover: 1px solid #646cff;
+	--switch-border-hover: 1px solid #4e29d1;
+	/* section border */
+	--section-border: #e2e2e3;
 }
-
+//========================================================================================================================================================
 :root[data-theme="dark"] {
 	/* background page */
 	--page-bg: #22272e;
 
 	/* colors */
 	--clr-main-text: #deded6;
-	--clr-change-text: #646cff;
-	--clr-logo: #646cff;
+	--clr-change-text: #a5abff;
+	--clr-logo: #a5abff;
 
 	/* header colors */
 	--header-color: rgba(28, 33, 40, 0.6);
@@ -65,11 +98,13 @@
 	--icon-clr-social: #deded6;
 
 	/* hover efects */
-	--hvr-links: #646cff;
+	--hvr-links: #a5abff;
 
 	/* switch colors */
 	--switch-bg: rgb(142 150 170 / 22%);
 	--switch-circle-bg: transparent;
 	--switch-border: 1px solid rgba(194, 194, 196, 0.4);
-	--switch-border-hover: 1px solid rgba(100, 108, 255, 9);
+	--switch-border-hover: 1px solid #a5abff;
+	/* section border */
+	--section-border: #000;
 }
