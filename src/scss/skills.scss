@@ -8,7 +8,6 @@
 	// .skills__title
 	&__title {
 		&:not(:last-child) {
-			margin-bottom: rem(40);
 			@include adaptiveValue("margin-bottom", 40, 30, 0, 1170, 768.98);
 		}
 	}

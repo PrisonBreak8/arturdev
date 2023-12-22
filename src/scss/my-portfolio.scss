@@ -5,6 +5,12 @@
 	// .my-portfolio__container
 	&__container {
 	}
+	// .my-portfolio__title
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 30, 0, 1170, 768.98);
+		}
+	}
 	// .my-portfolio__filter
 	&__filter {
 	}
@@ -23,7 +29,7 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		@include adaptiveValue("column-gap", 50, 25, 0, 1170, 768.98);
-		row-gap: 10px;
+		row-gap: rem(10);
 	}
 	// .filter__list
 	&__list {
@@ -37,11 +43,13 @@
 		font-weight: var(--fw-semi-bold);
 		text-transform: uppercase;
 		transition: color 0.2s;
+		@include adaptiveValue("font-size", 16, 14, 0, 1170, 768.98);
 		@media (any-hover: hover) {
 			&:hover {
 				color: var(--hvr-links);
 			}
 		}
+
 		&.active {
 			color: var(--clr-change-text);
 			span {
@@ -122,6 +130,9 @@
 					bottom: 100%;
 				}
 			}
+		}
+		@media (max-width: $mobileSmall) {
+			padding: rem(10) rem(20);
 		}
 	}
 }

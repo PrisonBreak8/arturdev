@@ -7,27 +7,26 @@
 	&__label {
 		@include adaptiveValue("font-size", 30, 22, 0, 1170, 479.98);
 		font-weight: var(--fw-semi-bold);
-		text-transform: uppercase;
+		text-transform: capitalize;
 
 		&::before,
 		&::after {
 			content: "";
 			position: absolute;
-			width: 30%;
-			height: 1px;
-			background-color: var(--clr-change-text);
+			//width: 30%;
+			//height: 1px;
+			//background-color: var(--clr-change-text);
 		}
 		&::before {
-			left: 0;
-			top: 0;
+			//left: 0;
+			//top: 0;
 		}
 		&::after {
-			right: 0;
-			bottom: 0;
+			//right: 0;
+			//bottom: 0;
 		}
 	}
 }
-
 //========================================================================================================================================================
 
 //========================================================================================================================================================
