@@ -227,6 +227,7 @@ export function filterGallery() {
 export function modeInit() {
 	//============ DARK LIGHT THEME ============================================================================================================================================
 	// Switch function
+
 	const switchTheme = () => {
 		// Get root element and data-theme value
 		const rootElem = document.documentElement;
@@ -240,6 +241,8 @@ export function modeInit() {
 	}
 	//Add event listener for the theme switcher
 	document.querySelector('#theme-switcher').addEventListener('click', switchTheme);
+
+
 }
 
 // Модуль анимация текста .change-text__word

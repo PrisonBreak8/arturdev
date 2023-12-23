@@ -1,44 +1,78 @@
 .skills {
-	@include adaptiveValue("padding-top", 80, 40);
-	@include adaptiveValue("padding-bottom", 80, 40);
-	border-top: 1px solid var(--section-border);
+	@include adaptiveValue("padding-top", 120, 40);
+	@include adaptiveValue("padding-bottom", 120, 40);
+	border-top: rem(1) solid var(--section-border);
 	// .skills__container
 	&__container {
 	}
 	// .skills__title
 	&__title {
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 40, 30, 0, 1170, 768.98);
+			@include adaptiveValue("margin-bottom", 60, 30, 0, 1170, 768.98);
 		}
 	}
-	// .skills__body-cards
-	&__body-cards {
+	// .skills__items
+	&__items {
 		display: grid;
-		column-gap: rem(30);
-		row-gap: rem(30);
-		grid-template-rows: repeat(6, 1fr);
-		@media (min-width: $mobile) {
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(3, 1fr);
-		}
-		@media (min-width: $tablet) {
+
+		@include adaptiveValue("column-gap", 30, 20);
+		@include adaptiveValue("row-gap", 30, 20);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		@media (min-width: $mobileSmall) {
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: repeat(2, 1fr);
 		}
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		@media (min-width: $tablet) {
+			grid-template-columns: repeat(5, 1fr);
+		}
 	}
-	// .skills__card
-	&__card {
+	// .skills__item
+	&__item {
 	}
 }
 
-.card {
-	// .card__heading
-	&__heading {
+.item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: rem(10);
+	cursor: pointer;
+	// .item__flex
+	&__flex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: rem(60);
+		height: rem(60);
+		border-radius: 50%;
+		border: rem(1) solid var(--skills-border);
+		background-color: var(--skills-bg);
+		transition: background-color 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--hvr-skills);
+			}
+		}
 	}
-	// .card__items
-	&__items {
+
+	// .item__icon
+	&__icon {
+		width: 100%;
+		height: 50%;
+		object-fit: contain;
 	}
-	// .card__item
-	&__item {
+	// .item__text
+	&__text {
+		text-align: center;
+		font-size: rem(12);
+		font-weight: var(--fw-semi-bold);
+		text-transform: capitalize;
 	}
 }

@@ -1,6 +1,6 @@
 .my-portfolio {
-	@include adaptiveValue("padding-top", 80, 40);
-	@include adaptiveValue("padding-bottom", 80, 40);
+	@include adaptiveValue("padding-top", 120, 40);
+	@include adaptiveValue("padding-bottom", 120, 40);
 	border-top: 1px solid var(--section-border);
 	// .my-portfolio__container
 	&__container {

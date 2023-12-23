@@ -1,11 +1,12 @@
 // Заголовки, общие БЭМ блоки и прочее...
 .title {
 	position: relative;
-	display: inline-block;
+	display: block;
 	color: var(--clr-change-text);
+	text-align: center;
 	// .title__label
 	&__label {
-		@include adaptiveValue("font-size", 30, 22, 0, 1170, 479.98);
+		@include adaptiveValue("font-size", 30, 26, 0, 1170, 479.98);
 		font-weight: var(--fw-semi-bold);
 		text-transform: capitalize;
 

@@ -18,7 +18,7 @@
 		document.documentElement.setAttribute('data-theme', themeToSet)
 	</script>
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231222114715">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231223160145">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,9 +35,9 @@
 					<div class="menu__items">
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a data-goto-header data-goto=".about-me" href="#" class="menu__link">About me</a></li>
+								<li class="menu__item is-active"><a data-goto-header data-goto=".hero" href="#" class="menu__link">About me</a></li>
 								<li class="menu__item"><a data-goto-header data-goto=".skills" href="#" class="menu__link">Skills</a></li>
-								<li class="menu__item"><a data-goto-header data-goto=".portfolio" href="#" class="menu__link">Portfolio</a></li>
+								<li class="menu__item"><a data-goto-header data-goto=".my-portfolio" href="#" class="menu__link">Portfolio</a></li>
 								<li class="menu__item"><a data-goto-header data-goto=".contacts" href="#" class="menu__link">Contacts</a></li>
 							</ul>
 						</nav>
@@ -105,34 +105,80 @@
 
 			<section class="skills">
 				<div class="skills__container">
-
 					<div class="skills__title title">
 						<h3 class="title__label">skills</h3>
 					</div>
+					<ul class="skills__items">
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/html.webp" type="image/webp"><img class="item__icon" src="img/skills/html.png" alt="Html icon"></picture>
+							</div>
+							<p class="item__text">Html</p>
+						</li>
 
-					<div class="skills__body-cards">
-						<div class="skills__card card">
-							<p class="card__heading">JavaScript</p>
-							<ul class="card__items">
-								<li class="card__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto.</li>
-							</ul>
-						</div>
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/css.webp" type="image/webp"><img class="item__icon" src="img/skills/css.png" alt="Css icon"></picture>
+							</div>
+							<p class="item__text">css</p>
+						</li>
 
-						<div class="skills__card card">
-							<p class="card__heading">JavaScript</p>
-							<ul class="card__items">
-								<li class="card__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto.</li>
-							</ul>
-						</div>
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/javascript.webp" type="image/webp"><img class="item__icon" src="img/skills/javascript.png" alt="JavaScript icon"></picture>
+							</div>
+							<p class="item__text">Java Script</p>
+						</li>
 
-						<div class="skills__card card">
-							<p class="card__heading">JavaScript</p>
-							<ul class="card__items">
-								<li class="card__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto.</li>
-							</ul>
-						</div>
-					</div>
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/sass.webp" type="image/webp"><img class="item__icon" src="img/skills/sass.png" alt="Sass icon"></picture>
+							</div>
+							<p class="item__text">sass</p>
+						</li>
 
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/git.webp" type="image/webp"><img class="item__icon" src="img/skills/git.png" alt="Git icon"></picture>
+							</div>
+							<p class="item__text">git</p>
+						</li>
+
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/github.webp" type="image/webp"><img class="item__icon" src="img/skills/github.png" alt="Github icon"></picture>
+							</div>
+							<p class="item__text">github</p>
+						</li>
+
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/webpack.webp" type="image/webp"><img class="item__icon" src="img/skills/webpack.png" alt="WebPack icon"></picture>
+							</div>
+							<p class="item__text">WebPack</p>
+						</li>
+
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/gulp.webp" type="image/webp"><img class="item__icon" src="img/skills/gulp.png" alt="Gulp icon"></picture>
+							</div>
+							<p class="item__text">Gulp</p>
+						</li>
+
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/npm.webp" type="image/webp"><img class="item__icon" src="img/skills/npm.png" alt="NPM icon"></picture>
+							</div>
+							<p class="item__text">npm</p>
+						</li>
+
+						<li class="skills__item item">
+							<div class="item__flex">
+								<picture><source srcset="img/skills/figma.webp" type="image/webp"><img class="item__icon" src="img/skills/figma.png" alt="Figma icon"></picture>
+							</div>
+							<p class="item__text">figma</p>
+						</li>
+					</ul>
 				</div>
 			</section>
 
@@ -199,7 +245,7 @@
 
 	</div>
 
-	<script src="js/app.min.js?_v=20231222114715"></script>
+	<script src="js/app.min.js?_v=20231223160145"></script>
 </body>
 
 </html>

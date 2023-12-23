@@ -103,13 +103,16 @@
 	}
 	// .menu__item
 	&__item {
+		&.is-active {
+			color: var(--hvr-links);
+		}
 	}
 	// .menu__link
 	&__link {
 		position: relative;
 		font-weight: var(--fw-semi-bold);
 		@include adaptiveValue("font-size", 18, 16, 0, 1170, 991.98);
-		transition: color 0.2s ease-in;
+
 		&::before {
 			content: "";
 			position: absolute;
