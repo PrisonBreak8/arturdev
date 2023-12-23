@@ -139,12 +139,13 @@ h6 {
   --fw-bold: 700;
   --fw-extra-bold: 800;
   /* transition */
-  --default-transition: color 0.2s, background-color 0.2s, fill 0.2s ease-in-out;
+  --default-transition: color 0.2s, background-color 0.2s, border 0.2s, fill 0.2s ease-in-out;
 }
 
 :root[data-theme=light] {
   /* background page */
   --page-bg: #fff;
+  --skills-bg: #f6f6f7;
   /* colors */
   --clr-main-text: #3c3c43;
   --clr-change-text: #4e29d1;
@@ -160,6 +161,7 @@ h6 {
   --icon-clr-social: #3c3c43;
   /* hover efects */
   --hvr-links: #4e29d1;
+  --hvr-skills: #e5e7ea;
   /* switch colors */
   --switch-bg: rgb(142 150 170 / 18%);
   --switch-circle-bg: #fff;
@@ -167,11 +169,13 @@ h6 {
   --switch-border-hover: 1px solid #4e29d1;
   /* section border */
   --section-border: #e2e2e3;
+  --skills-border: #e2e2e3;
 }
 
 :root[data-theme=dark] {
   /* background page */
   --page-bg: #22272e;
+  --skills-bg: #202127;
   /* colors */
   --clr-main-text: #deded6;
   --clr-change-text: #a5abff;
@@ -187,6 +191,7 @@ h6 {
   --icon-clr-social: #deded6;
   /* hover efects */
   --hvr-links: #a5abff;
+  --hvr-skills: #deded6;
   /* switch colors */
   --switch-bg: rgb(142 150 170 / 22%);
   --switch-circle-bg: transparent;
@@ -194,6 +199,7 @@ h6 {
   --switch-border-hover: 1px solid #a5abff;
   /* section border */
   --section-border: #000;
+  --skills-border: #191a1d;
 }
 
 body {
@@ -303,8 +309,9 @@ body {
 
 .title {
   position: relative;
-  display: inline-block;
+  display: block;
   color: var(--clr-change-text);
+  text-align: center;
 }
 
 .title__label {
@@ -378,11 +385,13 @@ body {
   align-items: center;
 }
 
+.menu__item.is-active {
+  color: var(--hvr-links);
+}
+
 .menu__link {
   position: relative;
   font-weight: var(--fw-semi-bold);
-  -webkit-transition: color 0.2s ease-in;
-  transition: color 0.2s ease-in;
 }
 
 .menu__link::before {
@@ -566,16 +575,70 @@ body {
 }
 
 .skills {
-  border-top: 1px solid var(--section-border);
+  border-top: 0.0625rem solid var(--section-border);
 }
 
-.skills__body-cards {
+.skills__items {
   display: grid;
-  -webkit-column-gap: 1.875rem;
-  -moz-column-gap: 1.875rem;
-  column-gap: 1.875rem;
-  row-gap: 1.875rem;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  row-gap: 0.625rem;
+  cursor: pointer;
+}
+
+.item__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  border: 0.0625rem solid var(--skills-border);
+  background-color: var(--skills-bg);
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.item__icon {
+  width: 100%;
+  height: 50%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.item__text {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: var(--fw-semi-bold);
+  text-transform: capitalize;
 }
 
 .my-portfolio {
@@ -776,6 +839,13 @@ body {
   text-align: center;
 }
 
+@media (min-width: 29.99875em) {
+  .skills__items {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 48.06125em) {
   .menu__list {
     display: -webkit-box;
@@ -792,9 +862,8 @@ body {
     row-gap: 0.625rem;
   }
 
-  .skills__body-cards {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  .skills__items {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -807,9 +876,8 @@ body {
 }
 
 @media (min-width: 61.99875em) {
-  .skills__body-cards {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  .skills__items {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -837,7 +905,7 @@ body {
   }
 
   .skills__title:not(:last-child) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.75rem;
   }
 
   .my-portfolio__title:not(:last-child) {
@@ -865,19 +933,29 @@ body {
   }
 
   .skills {
-    padding-top: 5rem;
+    padding-top: 7.5rem;
   }
 
   .skills {
-    padding-bottom: 5rem;
+    padding-bottom: 7.5rem;
+  }
+
+  .skills__items {
+    -webkit-column-gap: 1.875rem;
+    -moz-column-gap: 1.875rem;
+    column-gap: 1.875rem;
+  }
+
+  .skills__items {
+    row-gap: 1.875rem;
   }
 
   .my-portfolio {
-    padding-top: 5rem;
+    padding-top: 7.5rem;
   }
 
   .my-portfolio {
-    padding-bottom: 5rem;
+    padding-bottom: 7.5rem;
   }
 }
 
@@ -1052,7 +1130,7 @@ body {
 
 @media (max-width: 29.99875em) {
   .title__label {
-    font-size: 1.375rem;
+    font-size: 1.625rem;
   }
 
   .filter__button {
@@ -1077,6 +1155,16 @@ body {
     padding-bottom: 2.5rem;
   }
 
+  .skills__items {
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+  }
+
+  .skills__items {
+    row-gap: 1.25rem;
+  }
+
   .my-portfolio {
     padding-top: 2.5rem;
   }
@@ -1087,15 +1175,15 @@ body {
 }
 
 @media (min-width: 29.99875em) and (max-width: 73.125em) {
-@supports (font-size: clamp( 1.375rem , 1.027198487rem  +  1.1593866844vw , 1.875rem )) {
+@supports (font-size: clamp( 1.625rem , 1.4510992435rem  +  0.5796933422vw , 1.875rem )) {
     .title__label {
-      font-size: clamp( 1.375rem , 1.027198487rem  +  1.1593866844vw , 1.875rem );
+      font-size: clamp( 1.625rem , 1.4510992435rem  +  0.5796933422vw , 1.875rem );
     }
 }
 
-@supports not (font-size: clamp( 1.375rem , 1.027198487rem  +  1.1593866844vw , 1.875rem )) {
+@supports not (font-size: clamp( 1.625rem , 1.4510992435rem  +  0.5796933422vw , 1.875rem )) {
     .title__label {
-      font-size: calc(1.375rem + 0.5 * (100vw - 29.99875rem) / 43.12625);
+      font-size: calc(1.625rem + 0.25 * (100vw - 29.99875rem) / 43.12625);
     }
 }
 }
@@ -1125,51 +1213,79 @@ body {
     }
 }
 
-@supports (padding-top: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
+@supports (padding-top: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
     .skills {
-      padding-top: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem );
+      padding-top: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem );
     }
 }
 
-@supports not (padding-top: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
+@supports not (padding-top: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
     .skills {
-      padding-top: calc(2.5rem + 2.5 * (100vw - 18.75rem) / 56.25);
+      padding-top: calc(2.5rem + 5 * (100vw - 18.75rem) / 56.25);
     }
 }
 
-@supports (padding-bottom: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
+@supports (padding-bottom: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
     .skills {
-      padding-bottom: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem );
+      padding-bottom: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
+@supports not (padding-bottom: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
     .skills {
-      padding-bottom: calc(2.5rem + 2.5 * (100vw - 18.75rem) / 56.25);
+      padding-bottom: calc(2.5rem + 5 * (100vw - 18.75rem) / 56.25);
     }
 }
 
-@supports (padding-top: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
-    .my-portfolio {
-      padding-top: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem );
+@supports ((-moz-column-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem )) or (column-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem ))) {
+    .skills__items {
+      -webkit-column-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem );
+      -moz-column-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem );
+      column-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem );
     }
 }
 
-@supports not (padding-top: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
-    .my-portfolio {
-      padding-top: calc(2.5rem + 2.5 * (100vw - 18.75rem) / 56.25);
+@supports not ((-moz-column-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem )) or (column-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem ))) {
+    .skills__items {
+      -webkit-column-gap: calc(1.25rem + 0.625 * (100vw - 18.75rem) / 56.25);
+      -moz-column-gap: calc(1.25rem + 0.625 * (100vw - 18.75rem) / 56.25);
+      column-gap: calc(1.25rem + 0.625 * (100vw - 18.75rem) / 56.25);
     }
 }
 
-@supports (padding-bottom: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
-    .my-portfolio {
-      padding-bottom: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem );
+@supports (row-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem )) {
+    .skills__items {
+      row-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 2.5rem , 1.6666666667rem  +  4.4444444444vw , 5rem )) {
+@supports not (row-gap: clamp( 1.25rem , 1.0416666667rem  +  1.1111111111vw , 1.875rem )) {
+    .skills__items {
+      row-gap: calc(1.25rem + 0.625 * (100vw - 18.75rem) / 56.25);
+    }
+}
+
+@supports (padding-top: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
     .my-portfolio {
-      padding-bottom: calc(2.5rem + 2.5 * (100vw - 18.75rem) / 56.25);
+      padding-top: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
+    .my-portfolio {
+      padding-top: calc(2.5rem + 5 * (100vw - 18.75rem) / 56.25);
+    }
+}
+
+@supports (padding-bottom: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
+    .my-portfolio {
+      padding-bottom: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 2.5rem , 0.8333333333rem  +  8.8888888889vw , 7.5rem )) {
+    .my-portfolio {
+      padding-bottom: calc(2.5rem + 5 * (100vw - 18.75rem) / 56.25);
     }
 }
 }
@@ -1215,15 +1331,15 @@ body {
     }
 }
 
-@supports (margin-bottom: clamp( 1.875rem , 0.6765248616rem  +  2.4936412149vw , 2.5rem )) {
+@supports (margin-bottom: clamp( 1.875rem , -1.7204254152rem  +  7.4809236447vw , 3.75rem )) {
     .skills__title:not(:last-child) {
-      margin-bottom: clamp( 1.875rem , 0.6765248616rem  +  2.4936412149vw , 2.5rem );
+      margin-bottom: clamp( 1.875rem , -1.7204254152rem  +  7.4809236447vw , 3.75rem );
     }
 }
 
-@supports not (margin-bottom: clamp( 1.875rem , 0.6765248616rem  +  2.4936412149vw , 2.5rem )) {
+@supports not (margin-bottom: clamp( 1.875rem , -1.7204254152rem  +  7.4809236447vw , 3.75rem )) {
     .skills__title:not(:last-child) {
-      margin-bottom: calc(1.875rem + 0.625 * (100vw - 48.06125rem) / 25.06375);
+      margin-bottom: calc(1.875rem + 1.875 * (100vw - 48.06125rem) / 25.06375);
     }
 }
 
@@ -1319,6 +1435,10 @@ body {
 
   .switcher:hover {
     border: var(--switch-border-hover);
+  }
+
+  .item__flex:hover {
+    background-color: var(--hvr-skills);
   }
 
   .filter__button:hover {

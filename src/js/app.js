@@ -33,7 +33,7 @@ artFunctions.addTouchClass();
 /* Модуль для работы с меню (Бургер) */
 artFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
-//artFunctions.fullVHfix();
+artFunctions.fullVHfix();
 
 /* Модуль White and Dark mode */
 artFunctions.modeInit();
@@ -65,7 +65,7 @@ import * as artScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
 // Документация:
-// artScroll.pageNavigation();
+artScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру во время прокрутки
 // Документация:
