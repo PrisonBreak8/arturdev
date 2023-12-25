@@ -14,19 +14,13 @@
 	// .skills__items
 	&__items {
 		display: grid;
-
-		@include adaptiveValue("column-gap", 30, 20);
-		@include adaptiveValue("row-gap", 30, 20);
-		grid-template-rows: repeat(2, 1fr);
-		grid-template-columns: repeat(2, 1fr);
+		@include adaptiveValue("column-gap", 15, 10, 0, 1170, 768.98);
+		@include adaptiveValue("row-gap", 15, 10, 0, 1170, 768.98);
+		grid-template-columns: repeat(3, 1fr);
 		@media (min-width: $mobileSmall) {
-			grid-template-columns: repeat(3, 1fr);
-			grid-template-rows: repeat(2, 1fr);
-		}
-		@media (min-width: $mobile) {
 			grid-template-columns: repeat(4, 1fr);
 		}
-		@media (min-width: $tablet) {
+		@media (min-width: $mobile) {
 			grid-template-columns: repeat(5, 1fr);
 		}
 	}
@@ -40,17 +34,24 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	row-gap: rem(10);
+	row-gap: rem(8);
 	cursor: pointer;
 	// .item__flex
 	&__flex {
+		picture {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-		width: rem(60);
-		height: rem(60);
+		width: rem(80);
+		height: rem(80);
 		border-radius: 50%;
 		border: rem(1) solid var(--skills-border);
 		background-color: var(--skills-bg);
@@ -65,7 +66,7 @@
 	// .item__icon
 	&__icon {
 		width: 100%;
-		height: 50%;
+		height: 70%;
 		object-fit: contain;
 	}
 	// .item__text

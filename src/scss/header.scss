@@ -14,7 +14,7 @@
 		top: -20%;
 		background-color: var(--header-color-fixed);
 		box-shadow: var(--header-box-shadow);
-		border-bottom: 1px solid var(--section-border);
+		border-bottom: rem(1) solid var(--section-border);
 	}
 	&._header-show {
 		transition: top 0.3s ease 0s;
