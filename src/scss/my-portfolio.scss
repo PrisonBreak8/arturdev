@@ -1,7 +1,7 @@
 .my-portfolio {
 	@include adaptiveValue("padding-top", 120, 40);
 	@include adaptiveValue("padding-bottom", 120, 40);
-	border-top: 1px solid var(--section-border);
+	border-top: rem(1) solid var(--section-border);
 	// .my-portfolio__container
 	&__container {
 	}
@@ -13,6 +13,9 @@
 	}
 	// .my-portfolio__filter
 	&__filter {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 30);
+		}
 	}
 	// .my-portfolio__cards
 	&__cards {
@@ -135,4 +138,107 @@
 			padding: rem(10) rem(20);
 		}
 	}
+}
+
+.my-portfolio {
+	// .my-portfolio__cards
+	&__cards {
+		display: grid;
+		gap: rem(8);
+		@media (min-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	// .my-portfolio__card
+	&__card {
+		padding: rem(10);
+		border: rem(1) solid var(--skills-border);
+		background-color: var(--cards-bg);
+		&.hiden {
+			display: none;
+		}
+	}
+}
+.card {
+	// .card__image
+	&__image {
+		width: 100%;
+		max-height: rem(400);
+		object-fit: contain;
+	}
+	// .card__description
+	&__description {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include adaptiveValue("row-gap", 40, 25);
+		padding: rem(10);
+		background-color: var(--page-bg);
+	}
+	// .card__head
+	&__head {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		column-gap: rem(10);
+		row-gap: rem(5);
+	}
+	// .card__title
+	&__title {
+		@include adaptiveValue("font-size", 20, 18);
+		font-weight: var(--fw-semi-bold);
+		text-transform: capitalize;
+	}
+	// .card__icon
+	&__icon {
+		max-height: rem(22);
+		min-width: rem(22);
+		object-fit: contain;
+	}
+	// .card__main
+	&__main {
+		text-align: center;
+	}
+	// .card__text
+	&__text {
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+		}
+	}
+	// .card__technologies
+	&__technologies {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		column-gap: rem(15);
+		row-gap: rem(6);
+		font-weight: var(--fw-semi-bold);
+		text-transform: capitalize;
+	}
+	// .card__footer
+	&__footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		column-gap: rem(25);
+		row-gap: rem(8);
+		font-weight: var(--fw-semi-bold);
+	}
+
+	// .card__link-svg
+	&__link-svg {
+		display: flex;
+		align-items: center;
+		column-gap: rem(15);
+		text-transform: capitalize;
+	}
+}
+.code-github,
+.live-demo {
+	width: rem(28);
+	height: rem(28);
+	fill: var(--icon-clr-social);
 }

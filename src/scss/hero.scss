@@ -22,7 +22,7 @@
 	&__item {
 		@include adaptiveValue("font-size", 28, 20, 0, 1170, 768.98);
 		&:not(:last-child) {
-			margin-bottom: rem(15);
+			margin-bottom: rem(25);
 		}
 	}
 	// .change-text__name
@@ -72,7 +72,7 @@
 		@include adaptiveValue("font-size", 18, 14);
 		line-height: 1.4;
 		&:not(:last-child) {
-			margin-bottom: rem(15);
+			margin-bottom: rem(25);
 		}
 	}
 }

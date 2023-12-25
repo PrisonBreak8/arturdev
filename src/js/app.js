@@ -60,6 +60,8 @@ artFunctions.changeTextWord();
 // Сниппет(HTML):
 // import './libs/watcher.js'
 
+
+
 // Функции работы скролом
 import * as artScroll from "./files/scroll/scroll.js";
 

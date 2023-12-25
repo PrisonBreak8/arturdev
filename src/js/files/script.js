@@ -21,9 +21,7 @@ const toggleActive = (e) => {
 }
 const menu = document.querySelector('.menu__list');
 menu.addEventListener('click', toggleActive);
-
-
-
+//========================================================================================================================================================
 
 
 
